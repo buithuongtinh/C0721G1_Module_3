@@ -20,7 +20,7 @@ SELECT S.student_name , Sub.sub_name,M.mark
 FROM student S 
 INNER JOIN mark M on S.student_id = M.student_id
 INNER JOIN `subject` Sub on M.sub_id = Sub.sub_id
-ORDER BY mark DESC;
+ORDER BY mark DESC ,student_name ASC;
 
 
 

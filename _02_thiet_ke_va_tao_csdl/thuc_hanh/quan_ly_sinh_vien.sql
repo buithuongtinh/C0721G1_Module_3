@@ -34,3 +34,4 @@ FOREIGN KEY (sub_id) REFERENCES `subject`(sub_id),
 FOREIGN KEY (student_id) REFERENCES student(student_id)
 );
 
+
