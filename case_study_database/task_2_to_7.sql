@@ -5,10 +5,10 @@ USE furama_resort_management;
 start_position là một số âm, thì hàm SUBSTR bắt đầu từ cuối chuỗi và đếm ngược.*/
 SELECT *
 FROM nhan_vien
-WHERE(substr(ho_ten_nv, - 5) LIKE '%T%'
-        OR substr(ho_ten_nv, - 5) LIKE '%H%'
-        OR substr(ho_ten_nv, - 5) LIKE '%K%')
-        AND char_length(ho_ten_nv) <= 15;
+WHERE(substring_index(ho_ten_nv,' ',-1) LIKE '%T%'
+        OR substring_index(ho_ten_nv,' ',-1) LIKE '%H%'
+        OR substring_index(ho_ten_nv,' ',-1) LIKE '%K%')
+        AND length(ho_ten_nv) <= 15;
 -- task 3 Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 SELECT * 
 FROM khach_hang 
@@ -53,9 +53,11 @@ SELECT dv.id_dich_vu ,dv.ten_dich_vu,dv.dien_tich,dv.so_nguoi_toi_da,dv.chi_phi_
 FROM dich_vu dv
 INNER JOIN hop_dong hd on hd.id_dich_vu = dv.id_dich_vu
 INNER JOIN loai_dich_vu ldv on ldv.id_loai_dv = dv.id_loai_dv
-WHERE year(ngay_lam_hd) = 2018 AND dv.id_loai_dv NOT IN (SELECT dv.id_dich_vu
-FROM dich_vu dv INNER JOIN hop_dong hd on hd.id_dich_vu = dv.id_dich_vu
-WHERE year(hd.ngay_lam_hd)= 2019);
+WHERE year(ngay_lam_hd) = 2018 AND dv.id_loai_dv 
+NOT IN (SELECT dv.id_dich_vu
+	    FROM dich_vu dv 
+        INNER JOIN hop_dong hd on hd.id_dich_vu = dv.id_dich_vu
+		WHERE year(hd.ngay_lam_hd)= 2019);
 
 
 
