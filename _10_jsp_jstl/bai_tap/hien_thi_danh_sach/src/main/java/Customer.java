@@ -1,25 +1,25 @@
-public class Product {
-    private String nameProduct;
+public class Customer {
+    private String nameCustomer;
     private String dateOfBirth;
     private String address;
     private String image;
 
-    public Product() {
+    public Customer() {
     }
 
-    public Product(String nameProduct, String dateOfBirth, String address, String image) {
-        this.nameProduct = nameProduct;
+    public Customer(String nameCustomer, String dateOfBirth, String address, String image) {
+        this.nameCustomer = nameCustomer;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
         this.image = image;
     }
 
-    public String getNameProduct() {
-        return nameProduct;
+    public String getNameCustomer() {
+        return nameCustomer;
     }
 
-    public void setNameProduct(String nameProduct) {
-        this.nameProduct = nameProduct;
+    public void setNameCustomer(String nameCustomer) {
+        this.nameCustomer = nameCustomer;
     }
 
     public String getDateOfBirth() {

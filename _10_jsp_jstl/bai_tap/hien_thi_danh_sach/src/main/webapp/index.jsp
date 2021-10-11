@@ -31,13 +31,13 @@
       <th>Địa Chỉ</th>
       <th>Ảnh</th>
     </tr>
-    <c:forEach items="${productList}" var="product">
+    <c:forEach items="${customerList}" var="customer">
       <tr>
-        <td>${product.nameProduct}</td>
-        <td>${product.dateOfBirth}</td>
-        <td>${product.address}</td>
+        <td>${customer.nameCustomer}</td>
+        <td>${customer.dateOfBirth}</td>
+        <td>${customer.address}</td>
         <td>
-          <img src="/img/${product.image}" width="50" height="50">
+          <img src="/img/${customer.image}" width="50" height="50">
         </td>
 
       </tr>
